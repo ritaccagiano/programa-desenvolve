@@ -1,0 +1,87 @@
+Exibindo em um alert o nome digitado
+
+Emanuelle estava ajudando seus colegas a se prepararem para a próxima prova de lógica de programação. Eles pediram para que ela resolvesse a seguinte questão que era certo que cairia na prova: "ler do mundo HTML um texto digitado pelo usuário e no clique de um botão exibir o que foi digitado".
+
+Ela começou pela estrutura mínima de todo o programa:
+
+<meta charset="UTF-8">
+
+<script>
+</script>COPIAR CÓDIGO
+Depois, adicionou um campo de entrada e um botão com as tag's <input/> e <button>, respectivamente:
+
+<meta charset="UTF-8">
+
+<input/>
+<button>Exibir texto digitado</button>
+
+<script>
+</script>COPIAR CÓDIGO
+Depois, buscou do mundo JavaScript a tag <input/> lá do mundo HTML. Ela explicou que isso era necessário, pois só assim o JavaScript seria capaz de ler o que está escrito no <input>:
+
+<meta charset="UTF-8">
+
+<input/>
+<button>Exibir texto digitado</button>
+
+<script>
+    var input = document.querySelector("input");
+</script>COPIAR CÓDIGO
+Na sequência ela explicou que precisa programar dentro de uma função quais instruções devem ser executadas quando o botão for clicado. O problema é que ela criou apenas a função, não as instruções. Sua intenção é terminá-la no final:
+
+<meta charset="UTF-8">
+
+<input/>
+<button>Exibir texto digitado</button>
+
+<script>
+    var input = document.querySelector("input");
+
+    function exibeTexto() {
+
+    }
+</script>COPIAR CÓDIGO
+Em seguida, com muita calma, ela disse que a função exibeTexto precisa ser chamada pelo botão e que, primeiro, ela precisa obter lá do mundo HTML o botão e realizar a associação:
+
+<meta charset="UTF-8">
+
+<input/>
+<button>Exibir texto digitado</button>
+
+<script>
+    var input = document.querySelector("input");
+
+    function exibeTexto() {
+
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = exibeTexto;
+</script>COPIAR CÓDIGO
+Veja que nesta última mudança, ela associou a função ao button.onclick. Com essa associação, toda vez que o botão for clicado ele executará o exibeTexto, é como se, por debaixo dos panos, o navegador fizesse exibeTexto() toda vez que o botão é clicado.
+
+Mas, quando Emanuelle começou a explicar o código da função exibeTexto sua aula começou e ela teve que correr para dentro de sala.
+
+E agora? Será que seus amigos conseguem terminar o código?
+
+Qual das opções abaixo possui o código completo da função exibeTexto? Mas é preciso que o código funcione conforme esperado, que é exibir um alerta para o usuário.
+
+<meta charset="UTF-8">
+
+<input/>
+<button>Exibir texto digitado</button>
+
+<script>
+    var input = document.querySelector("input");
+
+    function exibeTexto() {
+
+        alert(input.value);
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = exibeTexto;
+</script>
+
+Quando a função exibeTexto for chamada, ela passará como parâmetro da função alert o valor input.value. Não podemos passar simplesmente input, porque o input corresponde a TAG e queremos dessa TAG seu valor (value). Por isso passamos input.value.
+
